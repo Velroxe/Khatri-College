@@ -24,3 +24,16 @@ export const COURSES = [
     description: "Additional commerce, finance, and competitive exam specialization programs."
   },
 ];
+
+export const INFORMATION = {
+  name: "Khatri College",
+  phone: "+91 98116 54422",
+  email: "khatricollege@gmail.com",
+  address: "E-37, Tagore Garden Extn., New Delhi - 110027"
+}
+
+export const SOCIAL = {
+  instagram: "#",
+  facebook: "#",
+  youtube: "#"
+}

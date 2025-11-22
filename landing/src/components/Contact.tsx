@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Phone, Mail, MapPin } from "lucide-react";
+import { INFORMATION as info } from "@/lib/constants";
 
 const BACKEND = process.env.NEXT_PUBLIC_BACKEND;
 
@@ -78,18 +79,18 @@ export default function Contact() {
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
                   <Phone className="w-6 h-6 text-blue-600" />
-                  <p className="text-lg font-medium">+91 98116 54422</p>
+                  <p className="text-lg font-medium">{info.phone}</p>
                 </div>
 
                 <div className="flex items-center gap-4">
                   <Mail className="w-6 h-6 text-blue-600" />
-                  <p className="text-lg font-medium">team@khatricollege.com</p>
+                  <p className="text-lg font-medium">{info.email}</p>
                 </div>
 
                 <div className="flex items-center gap-4">
                   <MapPin className="w-6 h-6 text-blue-600" />
                   <p className="text-lg font-medium">
-                    E-37, Tagore Garden Extn., New Delhi - 110027
+                    {info.address}
                   </p>
                 </div>
               </div>

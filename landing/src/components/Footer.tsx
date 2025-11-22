@@ -5,6 +5,7 @@ import { Facebook, Instagram, Youtube, Mail, Phone, MapPin } from "lucide-react"
 import Link from "next/link";
 
 import { NAV_LINKS } from "@/lib/constants"; // same array used in navbar
+import { INFORMATION as info, SOCIAL as social } from "@/lib/constants";
 
 export default function Footer() {
   return (
@@ -49,17 +50,17 @@ export default function Footer() {
             <div className="space-y-3 text-muted-foreground">
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-primary" />
-                <span>+91 98765 43210</span>
+                <span>{info.phone}</span>
               </div>
 
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-primary" />
-                <span>support@khatricollege.com</span>
+                <span>{info.email}</span>
               </div>
 
               <div className="flex items-center gap-3">
                 <MapPin className="w-5 h-5 text-primary" />
-                <span>Khatri College, Main Street, Your City</span>
+                <span>{info.address}</span>
               </div>
             </div>
           </div>
@@ -82,20 +83,20 @@ export default function Footer() {
         >
           {/* Social Links */}
           <div className="flex items-center gap-6">
-            <motion.a whileHover={{ scale: 1.1 }} href="#">
+            <motion.a whileHover={{ scale: 1.1 }} href={social.facebook}>
               <Facebook className="w-6 h-6 hover:text-primary transition" />
             </motion.a>
-            <motion.a whileHover={{ scale: 1.1 }} href="#">
+            <motion.a whileHover={{ scale: 1.1 }} href={social.instagram}>
               <Instagram className="w-6 h-6 hover:text-primary transition" />
             </motion.a>
-            <motion.a whileHover={{ scale: 1.1 }} href="#">
+            <motion.a whileHover={{ scale: 1.1 }} href={social.youtube}>
               <Youtube className="w-6 h-6 hover:text-primary transition" />
             </motion.a>
           </div>
 
           {/* Copyright */}
           <p className="text-sm text-muted-foreground text-center">
-            © {new Date().getFullYear()} Khatri College. All rights reserved.
+            © 1991 Khatri College. All rights reserved.
           </p>
         </motion.div>
       </div>
