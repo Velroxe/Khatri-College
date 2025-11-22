@@ -2,6 +2,7 @@ import express from "express";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import "dotenv/config";
+
 import authAdminRoutes from "./src/routes/authAdminRoutes.js";
 import authStudentRoutes from "./src/routes/authStudentRoutes.js";
 import courseRoutes from "./src/routes/courseRoutes.js";
@@ -15,6 +16,7 @@ import facultyRoutes from "./src/routes/facultyRoutes.js";
 import scholarRoutes from "./src/routes/scholarRoutes.js";
 import dashboardRoutes from "./src/routes/dashboardRoutes.js";
 import clearOldDataRoutes from "./src/routes/clearOldDataRoutes.js";
+import contactRoutes from "./src/routes/contactRoutes.js";
 
 const app = express();
 
@@ -25,6 +27,7 @@ app.use(cors({
   origin: [
     process.env.ADMIN_HOST,
     process.env.STUDENT_HOST,
+    process.env.LANDING_PAGE_HOST,
   ], // your frontend URL
   credentials: true, // ✅ allow cookies to be sent
 }));
@@ -47,6 +50,7 @@ app.use("/api/faculties", facultyRoutes);
 app.use("/api/scholars", scholarRoutes);
 app.use("/api/dashboard", dashboardRoutes);
 app.use("/api/cleanup", clearOldDataRoutes);
+app.use("/api/contact", contactRoutes);
 
 const PORT = process.env.PORT || 5000;
 

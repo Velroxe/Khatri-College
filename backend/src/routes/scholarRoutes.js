@@ -53,11 +53,41 @@ router.post("/", verifyAuthAdmin, async (req, res) => {
 
 
 /* ======================================================
-   GET ALL SCHOLARS
+    GET ALL SCHOLARS WITH SUBJECTS (CASE-based filtering)
 ====================================================== */
 router.get("/", async (req, res) => {
   try {
-    const scholars = await sql`SELECT * FROM scholars ORDER BY created_at DESC`;
+    const scholars = await sql`
+      SELECT
+          s.id,
+          s.name,
+          s.degree,
+          s.image_url,
+          s.created_at,
+          s.updated_at,
+          COALESCE(
+              JSON_AGG(
+                  CASE 
+                      -- Only include the subject object if sts.id is NOT NULL (i.e., a subject exists)
+                      WHEN sts.id IS NOT NULL THEN JSON_BUILD_OBJECT(
+                          'subject', sts.subject_name,
+                          'marks', sts.marks
+                      )
+                      -- ELSE returns NULL, which JSON_AGG automatically ignores.
+                      ELSE NULL 
+                  END
+              ),
+              '[]'::json 
+          ) AS subjects
+      FROM
+          public.scholars s
+      LEFT JOIN
+          public.scholar_top_subjects sts ON s.id = sts.scholar_id
+      GROUP BY
+          s.id
+      ORDER BY
+          s.created_at DESC;
+    `;
     res.json(scholars);
   } catch (err) {
     console.error("Fetch scholars error:", err);

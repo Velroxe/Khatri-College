@@ -28,18 +28,18 @@ export function setAuthCookies(res, accessToken, refreshToken) {
   res.cookie("student_access_token", accessToken, {
     httpOnly: true,
     secure: isProd,
-    sameSite: isProd ? "strict" : "lax" ,
+    sameSite: isProd ? "none" : "lax",
+    // domain: ".khatricollege.com",
     maxAge: 15 * 60 * 1000, // 15 minutes
-    path: "/",
   });
 
   // Refresh Token Cookie — long-lived, HTTP-only
   res.cookie("student_refresh_token", refreshToken, {
     httpOnly: true,
     secure: isProd,
-    sameSite: isProd ? "strict" : "lax" ,
+    sameSite: isProd ? "none" : "lax",
+    // domain: ".khatricollege.com",
     maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
-    path: "/",
   });
 }
 
@@ -47,7 +47,8 @@ export const clearAuthCookies = (res) => {
   res.clearCookie("student_access_token", '', {
     httpOnly: true,
     secure: isProd,
-    sameSite: isProd ? "strict" : "lax",
+    sameSite: isProd ? "none" : "lax",
+    // domain: ".khatricollege.com",
     path: '/',
     expires: new Date(0), // Expire immediately
   });
@@ -55,7 +56,8 @@ export const clearAuthCookies = (res) => {
   res.clearCookie("student_refresh_token", '', {
     httpOnly: true,
     secure: isProd,
-    sameSite: isProd ? "strict" : "lax",
+    sameSite: isProd ? "none" : "lax",
+    // domain: ".khatricollege.com",
     path: '/',
     expires: new Date(0), // Expire immediately
   });

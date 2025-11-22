@@ -84,14 +84,16 @@ export const verifyAuthAdmin = async (req, res, next) => {
     res.cookie("admin_access_token", newAccessToken, {
       httpOnly: true,
       secure: isProd,
-      sameSite: isProd ? "strict" : "lax",
+      sameSite: isProd ? "none" : "lax",
+      // domain: ".khatricollege.com",
       maxAge: 15 * 60 * 1000,
     });
 
     res.cookie("admin_refresh_token", newRefreshToken, {
       httpOnly: true,
       secure: isProd,
-      sameSite: isProd ? "strict" : "lax",
+      sameSite: isProd ? "none" : "lax",
+      // domain: ".khatricollege.com",
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
 
