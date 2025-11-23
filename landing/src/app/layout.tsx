@@ -29,14 +29,6 @@ export const metadata: Metadata = {
     canonical: baseUrl + "/",
   },
 
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 5,
-  },
-
-  themeColor: "#ffffff",
-
   robots: {
     index: true,
     follow: true,
