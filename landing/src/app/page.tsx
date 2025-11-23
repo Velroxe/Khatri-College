@@ -105,12 +105,14 @@ const Home = () => {
       />
 
       <Navbar />
-      <Hero />
-      <About />
-      <Courses />
-      <Faculties />
-      <Scholars />
-      <Contact />
+      <main className='w-full overflow-hidden'>
+        <Hero />
+        <About />
+        <Courses />
+        <Faculties />
+        <Scholars />
+        <Contact />
+      </main>
       <Footer />
     </>
   )
