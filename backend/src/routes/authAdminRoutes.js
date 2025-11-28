@@ -51,7 +51,7 @@ router.post("/login-password", async (req, res) => {
       httpOnly: true,
       secure: isProd,
       sameSite: isProd ? "none" : "lax",
-      // domain: ".khatricollege.com",
+      domain: ".khatricollege.com",
       maxAge: 15 * 60 * 1000, // 15 min
     });
 
@@ -59,7 +59,7 @@ router.post("/login-password", async (req, res) => {
       httpOnly: true,
       secure: isProd,
       sameSite: isProd ? "none" : "lax",
-      // domain: ".khatricollege.com",
+      domain: ".khatricollege.com",
       maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
     });
 
@@ -115,7 +115,7 @@ router.post("/refresh", async (req, res) => {
       httpOnly: true,
       secure: isProd,
       sameSite: isProd ? "none" : "lax",
-      // domain: ".khatricollege.com",
+      domain: ".khatricollege.com",
       maxAge: 15 * 60 * 1000,
     });
 
@@ -123,7 +123,7 @@ router.post("/refresh", async (req, res) => {
       httpOnly: true,
       secure: isProd,
       sameSite: isProd ? "none" : "lax",
-      // domain: ".khatricollege.com",
+      domain: ".khatricollege.com",
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
 
@@ -187,7 +187,7 @@ router.get("/me", async (req, res) => {
         httpOnly: true,
         secure: isProd,
         sameSite: isProd ? "none" : "lax",
-        // domain: ".khatricollege.com",
+        domain: ".khatricollege.com",
         maxAge: 15 * 60 * 1000, // 15 min
       });
 
@@ -195,7 +195,7 @@ router.get("/me", async (req, res) => {
         httpOnly: true,
         secure: isProd,
         sameSite: isProd ? "none" : "lax",
-        // domain: ".khatricollege.com",
+        domain: ".khatricollege.com",
         maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
       });
 
@@ -231,14 +231,14 @@ router.post("/logout", async (req, res) => {
       httpOnly: true,
       secure: isProd,
       sameSite: isProd ? "none" : "lax",
-      // domain: ".khatricollege.com",
+      domain: ".khatricollege.com",
     });
 
     res.clearCookie("admin_refresh_token", {
       httpOnly: true,
       secure: isProd,
       sameSite: isProd ? "none" : "lax",
-      // domain: ".khatricollege.com",
+      domain: ".khatricollege.com",
     });
 
     return res.json({ message: "Logged out successfully" });
@@ -361,7 +361,7 @@ router.post("/login-otp", async (req, res) => {
       httpOnly: true,
       secure: isProd,
       sameSite: isProd ? "none" : "lax",
-      // domain: ".khatricollege.com",
+      domain: ".khatricollege.com",
       maxAge: 15 * 60 * 1000,
     });
 
@@ -369,7 +369,7 @@ router.post("/login-otp", async (req, res) => {
       httpOnly: true,
       secure: isProd,
       sameSite: isProd ? "none" : "lax",
-      // domain: ".khatricollege.com",
+      domain: ".khatricollege.com",
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
 

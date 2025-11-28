@@ -85,7 +85,7 @@ export const verifyAuthAdmin = async (req, res, next) => {
       httpOnly: true,
       secure: isProd,
       sameSite: isProd ? "none" : "lax",
-      // domain: ".khatricollege.com",
+      domain: ".khatricollege.com",
       maxAge: 15 * 60 * 1000,
     });
 
@@ -93,7 +93,7 @@ export const verifyAuthAdmin = async (req, res, next) => {
       httpOnly: true,
       secure: isProd,
       sameSite: isProd ? "none" : "lax",
-      // domain: ".khatricollege.com",
+      domain: ".khatricollege.com",
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
 
