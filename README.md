@@ -1,0 +1,2 @@
+# Khatri College
+---
