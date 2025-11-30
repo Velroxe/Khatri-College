@@ -1,4 +1,5 @@
 const host = process.env.NEXT_PUBLIC_BACKEND || "";
+const folderString = process.env.DRIVE_FOLDER_STRING || "1FfNNcXoosDnh9WXu5ikhKqEGt7bR-9pR";
 
 export interface UploadResult {
   fileId: string;
@@ -15,7 +16,7 @@ export interface UploadResult {
  */
 export async function uploadFileToDrive(
   file: File,
-  folderId: string = "1FfNNcXoosDnh9WXu5ikhKqEGt7bR-9pR"
+  folderId: string = folderString
 ): Promise<UploadResult> {
   try {
     // 1️⃣ Get short-lived access token from your backend
