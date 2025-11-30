@@ -15,7 +15,7 @@ export interface UploadResult {
  */
 export async function uploadFileToDrive(
   file: File,
-  folderId: string = "1RELhHC-C-hhOEowk_sD_Em5SPwglE8cj"
+  folderId: string = "1FfNNcXoosDnh9WXu5ikhKqEGt7bR-9pR"
 ): Promise<UploadResult> {
   try {
     // 1️⃣ Get short-lived access token from your backend
