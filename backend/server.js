@@ -23,14 +23,31 @@ const app = express();
 // app.use(cors());
 app.use(express.json());
 app.use(cookieParser()); // ✅ this is required
-app.use(cors({
-  origin: [
+
+app.use((req, res, next) => {
+  const allowedOrigins = [
     process.env.ADMIN_HOST,
     process.env.STUDENT_HOST,
     process.env.LANDING_PAGE_HOST,
-  ], // your frontend URL
-  credentials: true, // ✅ allow cookies to be sent
-}));
+  ];
+
+  const origin = req.headers.origin;
+
+  if (allowedOrigins.includes(origin)) {
+    res.header("Access-Control-Allow-Origin", origin);
+  }
+
+  res.header("Access-Control-Allow-Credentials", "true");
+  res.header("Access-Control-Allow-Methods", "GET,POST,PUT,PATCH,DELETE,OPTIONS");
+  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+
+  // Handle preflight OPTIONS request
+  if (req.method === "OPTIONS") {
+    return res.sendStatus(200);
+  }
+
+  next();
+});
 
 app.use((req, res, next) => {
   console.log("Incoming:", req.method, req.url);
