@@ -20,10 +20,12 @@ import contactRoutes from "./src/routes/contactRoutes.js";
 
 const app = express();
 
-// app.use(cors());
-app.use(express.json());
-app.use(cookieParser()); // ✅ this is required
+app.disable("etag"); // <--- IMPORTANT (prevents 304)
 
+app.use(express.json());
+app.use(cookieParser());
+
+// -------------------- CORS MIDDLEWARE --------------------
 app.use((req, res, next) => {
   const allowedOrigins = [
     process.env.ADMIN_HOST,
@@ -41,13 +43,19 @@ app.use((req, res, next) => {
   res.header("Access-Control-Allow-Methods", "GET,POST,PUT,PATCH,DELETE,OPTIONS");
   res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
 
-  // Handle preflight OPTIONS request
   if (req.method === "OPTIONS") {
     return res.sendStatus(200);
   }
 
   next();
 });
+
+// -------------------- 🔥 NO-CACHE MIDDLEWARE --------------------
+app.use((req, res, next) => {
+  res.setHeader("Cache-Control", "no-store"); // <--- FIXES YOUR ISSUE
+  next();
+});
+// ---------------------------------------------------------------
 
 app.use((req, res, next) => {
   console.log("Incoming:", req.method, req.url);
