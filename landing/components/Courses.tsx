@@ -29,7 +29,7 @@ const Courses: React.FC = () => {
               <p className="text-gray-600 mb-4 line-clamp-3 text-sm">
                 {course.description}
               </p>
-              <a href="#contact" className="flex items-center text-navy font-semibold text-sm hover:text-gold transition-colors">
+              <a href="/courses" className="flex items-center text-navy font-semibold text-sm hover:text-gold transition-colors">
                 Learn More <ArrowRight className="ml-1 h-4 w-4" />
               </a>
             </div>
@@ -37,7 +37,7 @@ const Courses: React.FC = () => {
         ))}
       </div>
       <div className="mt-12 text-center">
-        <a href="#contact" className="inline-block text-navy border-b-2 border-gold pb-1 hover:text-gold transition-colors font-medium">
+        <a href="/courses" className="inline-block text-navy border-b-2 border-gold pb-1 hover:text-gold transition-colors font-medium">
           View All Programs
         </a>
       </div>

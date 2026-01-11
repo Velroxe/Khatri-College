@@ -4,7 +4,7 @@ import { NavItem, Course, Faculty, Stat, Testimonial, Scholar } from './types';
 export const NAV_ITEMS: NavItem[] = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
-  { label: 'Courses', href: '#courses' },
+  { label: 'Courses', href: '/courses' },
   { label: 'Faculty', href: '#faculty' },
   { label: 'Scholars', href: '#scholars' },
   { label: 'Contact', href: '#contact' },
@@ -13,37 +13,54 @@ export const NAV_ITEMS: NavItem[] = [
 export const COURSES: Course[] = [
   {
     id: '1',
-    category: 'School Foundation',
-    title: 'Classes 5–10 (School Foundation)',
+    category: 'Language Skills',
+    title: 'English Speaking Course',
     description:
-      'Complete foundational learning across all subjects, focusing on NCERT syllabus, concept clarity, strengthening analytical thinking, concept mastery, and preparation for board foundations.',
+      'A complete English communication program including Basic Grammar (3 months), Advanced English (2 months) with vocabulary, translation, writing skills, and a dedicated Speaking Course (2 months) featuring JAM sessions, interviews, debates, speeches, and listening exercises.',
     image: '/course-1.webp',
   },
   {
     id: '2',
-    category: 'Commerce',
-    title: 'Classes 11 & 12 (Commerce ~ Maths)',
+    category: 'Foreign Language',
+    title: 'French Language (Basic to Advanced)',
     description:
-      'Comprehensive commerce curriculum including Accountancy & Business Studies, designed for in-depth understanding and complete preparation for board and competitive exams.',
+      'Comprehensive French language training from Basic to Advanced level covering verbs, tenses, pronouns, conditionals, vocabulary, sentence formation, and conversational fluency.',
     image: '/course-2.webp',
   },
   {
     id: '3',
-    category: 'Professional',
-    title: 'C.A. Foundation',
+    category: 'School Academics',
+    title: 'Class X (All Subjects)',
     description:
-      'Expert CA foundation coaching with conceptual mastery & mock tests.',
+      'Focused academic coaching for Class X students covering English, Mathematics, Science, and Social Science with emphasis on board exam preparation and concept clarity.',
     image: '/course-3.webp',
   },
   {
     id: '4',
-    category: 'Professional Courses',
-    title: 'Other Professional Courses',
+    category: 'Commerce Stream',
+    title: 'Classes XI & XII – Commerce',
     description:
-      'Additional commerce, finance, and competitive exam specialization programs.',
+      'Complete commerce stream coaching including Accountancy, Economics, Business Studies, Mathematics, and English for Classes XI and XII with board-focused preparation.',
     image: '/course-4.webp',
   },
+  {
+    id: '5',
+    category: 'Junior Classes',
+    title: 'Junior Classes (All Subjects)',
+    description:
+      'All-subject coaching for junior classes with special English speaking sessions and interactive mathematics workshops to build strong academic foundations.',
+    image: '/course-1.webp',
+  },
+  {
+    id: '6',
+    category: 'Professional',
+    title: 'CA Foundation',
+    description:
+      'Structured CA Foundation coaching with expert guidance, conceptual clarity, and exam-oriented preparation.',
+    image: '/course-3.webp',
+  },
 ];
+
 
 
 export const FACULTY: Faculty[] = [
