@@ -2,12 +2,12 @@ import { GraduationCap, Users, Trophy, BookOpen } from 'lucide-react';
 import { NavItem, Course, Faculty, Stat, Testimonial, Scholar } from './types';
 
 export const NAV_ITEMS: NavItem[] = [
-  { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' },
+  { label: 'Home', href: '/#home' },
+  { label: 'About', href: '/#about' },
   { label: 'Courses', href: '/courses' },
-  { label: 'Faculty', href: '#faculty' },
-  { label: 'Scholars', href: '#scholars' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Faculty', href: '/#faculty' },
+  { label: 'Scholars', href: '/#scholars' },
+  { label: 'Contact', href: '/#contact' },
 ];
 
 export const COURSES: Course[] = [
